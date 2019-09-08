@@ -7,7 +7,7 @@ for num in range(10,21):
 print('How many times have i told you that i love you today?  ')
 answer=int(input())
 for  i in range(answer):
-    print('time {}: i love you'.format(i-1))
+    print('time {}: i love you very much'.format(i-1))
 
 for number in range (1,21):
     if number==4 or  number==13:
