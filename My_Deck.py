@@ -5,4 +5,3 @@ class Card:
 
     def __repr__(self):
         return '{} of {},'.format(self.value, self.suit)
-    
