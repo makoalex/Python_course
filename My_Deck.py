@@ -15,4 +15,4 @@ class Deck:
             for v in value:
                 self.cards.append(Card(v, s))
         print(self.cards)
-        
+
