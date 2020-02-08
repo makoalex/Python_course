@@ -41,7 +41,7 @@ class TestDeck(unittest.TestCase):
         self.assertEqual(self.deck.count(), 42)
 
     def test_deal_notEnough_cards(self):
-        """deal the number of cards left in the deck"""
+        """deal the number  of cards left in the deck"""
         cards= self.deck._deal(80)
         self.assertEqual(len(cards), 52)
         self.assertEqual(self.deck.count(),0)
