@@ -17,15 +17,4 @@
 # #         if s%2 ==0:
 # #             return slice(0,None,2)
 
-n = int(input().strip())
-if n %2 ==1:
-    print('Weird')
-elif n %2 in range(2,6)==0:
-    print('Not Weird')
-elif n%2 in range(6,21,2) ==0:
-    print('weird')
-else:
-    print('Not Weird')
-
-
 
