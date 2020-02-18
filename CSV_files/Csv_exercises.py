@@ -1,5 +1,7 @@
 # write a function that takes in a first and last name and adds it to a new file
 from csv import reader, writer, DictReader
+
+
 # #
 # #
 # # def add_user(first_name, last_name, country, style, weight):
@@ -24,15 +26,15 @@ from csv import reader, writer, DictReader
 #
 # # finding an user and returning he index where the user is found
 #
+
 def find_user(Name, Country):
     with open('Tekken_fighters.csv') as file:
-        new_one = reader(file)
-        new_file = list(new_one)
-
+        new_one = list(reader(file))
         try:
-           return new_file.index([Name, Country])
+            return new_one.index((Name, Country))
         except:
             return '{} {} not found'.format(Name, Country)
 
 
 print(find_user('Nina Williams', 'Ireland'))
+print(find_user("Jin Kazama","Japan"))
