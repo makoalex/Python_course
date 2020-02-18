@@ -24,12 +24,15 @@ from csv import reader, writer, DictReader
 #
 # # finding an user and returning he index where the user is found
 #
-# def find_user(name, country):
-with open('Tekken_fighters.csv') as file:
-    new_one =reader(file)
+def find_user(Name, Country):
+    with open('Tekken_fighters.csv') as file:
+        new_one = reader(file)
+        new_file = list(new_one)
 
-    new_file = list(next(new_one))
-    for elem in new_file:
-        for name, country in elem:
-            print()
+        try:
+           return new_file.index([Name, Country])
+        except:
+            return '{} {} not found'.format(Name, Country)
 
+
+print(find_user('Nina Williams', 'Ireland'))
