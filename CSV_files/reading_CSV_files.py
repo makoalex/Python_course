@@ -9,7 +9,7 @@ with open('Tekken_fighters.csv') as file:
         print(row)"""
     for fighter in csv_reader: """ extracting info from the list"""
     print('{} is specialised in {}'.format(fighter[0], fighter[2]))
-# we can also get the CSV file as on already ordered dictionary
+#we can also get the CSV file as on already ordered dictionary
 from csv import DictReader
 
 # we use the same procedure as above
