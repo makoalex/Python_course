@@ -11,13 +11,25 @@ from csv import reader, writer, DictReader
 # #     open_file.writerow(add_user('claudio', 'Serafino', 'Italy', 'sirius', 87))
 # #
 # # # printing all the first and last names from the tekken fighters file
-def print_users():
+# def print_users():
+#
+#
+#     with open('Tekken_fighters.csv') as new_file:
+#         scv_reader = DictReader(new_file)
+#         for row in scv_reader:
+#             for k, v in row.items():
+#                 if k == 'Name' or k == 'Country':
+#                     print('{} {}'.format(row['Name'], row['Country']))
+# print(print_users())
+#
+# # finding an user and returning he index where the user is found
+#
+# def find_user(name, country):
+with open('Tekken_fighters.csv') as file:
+    new_one =reader(file)
 
+    new_file = list(next(new_one))
+    for elem in new_file:
+        for name, country in elem:
+            print()
 
-    with open('Tekken_fighters.csv') as new_file:
-        scv_reader = DictReader(new_file)
-        for row in scv_reader:
-            for k, v in row.items():
-                if k == 'Name' or k == 'Country':
-                    print('{} {}'.format(row['Name'], row['Country']))
-print(print_users())
