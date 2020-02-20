@@ -1,4 +1,4 @@
-from myChickenClass import Chicken
+from Testing_With_Python.myChickenClass import Chicken
 import unittest
 
 
