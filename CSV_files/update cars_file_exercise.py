@@ -7,7 +7,7 @@ def update_cars(old_make, old_model, old_year, new_make, new_model, new_year):
         new_fil = reader(file)
         rows = list(new_fil)
         print(rows)
-        with open('cars.csv', 'w') as write_file:
+        with open('cars.csv', 'w', newline="") as write_file:
             new_writer = writer(write_file)
             index = 0
             for el in rows:
