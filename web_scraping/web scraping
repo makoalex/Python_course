@@ -1,0 +1,24 @@
+
+Web scraping hels with getting a lot of data from websites, without us having to do it manually
+we can extract the date, parse it and use it
+we can use web scraping if there is no other way to do it like an API, and we need the data to analyze or ti store
+
+BEAUTIFUL SOUP
+allows us to extract HTML data using Python,
+it does not download HTMl for us. we will have to use the request module
+we have to manually make the request to scrape the date
+
+use the request module to send a GET request, use the HTMl data we get back and send it to beautiful soup, and the we extract the INFO
+
+we have to call Beautiful Soup after we import it
+
+BeautifulSoup(html_string, "html_parser")-parse html
+
+important to remember that HTML always comes back as a string
+after that we can navigate through it using either -tag names:h1, h2, p, a
+                                                   - use a method called FIND with will return a matching tag
+                                                   -use a method called FIND_ALL witch will return a list of matching tags
+when we parse, the representation that is printed looks like HTML but is an instance of BS and has a bunch of methods that we can use
+whenever we call these methods, they may look like strings but they are <bs4.element. tag>, BS turn each tag into its own individual object.
+the big parsing being like a class
+when working with BS, and use the find_all method, in the case of classes you must use an underscore after, otherwise Python will think that you are declaring a class
