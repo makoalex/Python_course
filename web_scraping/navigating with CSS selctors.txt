@@ -1,0 +1,17 @@
+ Allow us too navigate and find elememnts based of CSS style selectors
+
+ Select- return a list of elements matching CSS selectors
+ CSS selectors cheatsheat:
+      1. to select something based on an id we use the # followed by the id name
+      2. to sekct of a class we use . and the name of the class
+using select often results in shorter and cleaner code.
+EXAMPLE:
+        finding an element  based of an id
+        using find: soup(name of the variable).find(id="#name of the id")- doesnt't return a list
+        using CSS and select: soup.select("#name of the id")[0]- this return a list with one object
+      finding an element with a class:
+      using find/ find_all:  sound.find/find_all( class= "name of the class")
+      using the CSS select : soup.select(".name of the class")
+    finding elements with data attribute:
+    using the find method: soup.find/find_all(attrs={"name of the attribute": 'value' }
+

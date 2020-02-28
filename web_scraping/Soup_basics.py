@@ -32,12 +32,17 @@ d = soup_dejour.find_all('li')
 print(d)
 """we can print based of id when we have a tag with id"""
 c = soup_dejour.find(id='first')
-print(c)
+c1= soup_dejour.select("#first")
+print(c1[0])
+
 """ we can print based of a class as well onnly we have to use the underscore after class so as not to be confused
 with a Python class."""
 b = soup_dejour.find_all(class_='special')
-print(b)
+b1 = soup_dejour.select(".special")
+print(b1[0])
 """we can also select based of attributes, and then we type ATTRS and colon and write the data as a dictionary 
 in the exact way we find it in the HTML code as in the example bellow"""
 a = soup_dejour.find(attrs={'data-example': 'yes'})
+a1= soup_dejour.select("[data-example]")
+print(a1)
 print(a)
