@@ -33,6 +33,20 @@ for el in data.select(".special"):
 """for every tag that has the class special in it """
 for i in data.select(".special"):
     print(i.name)
-    """we can laos use .ATTRS and this is a dictionary containing key value pairs for the elem inside the class"""
+
+    """we can also use .ATTRS and this is a dictionary containing key value pairs for the elem inside the class"""
     print(i.attrs)
+
     """ some can be a list as elements can have more than one class"""
+    """and if we are trying to access an attribute we ca do this"""
+    print(i.attrs["class"])
+"""we can also find an element like H3 using the find method, and then writing the attribute we want to get"""
+"""this is a shortcut to access values of attributes knowing their key"""
+"""but you can also write new_data = data.find("meta").attrs to get all the key value pairs """
+new_data = data.find("meta")["charset"]
+print(new_data)
+n_data = data.find("div")["id"]
+print(n_data)
+new_data1= data.find("h3")["data-example"]
+print(new_data1)
+
