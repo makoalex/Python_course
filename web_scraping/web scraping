@@ -1,5 +1,5 @@
 
-Web scraping hels with getting a lot of data from websites, without us having to do it manually
+Web scraping helps with getting a lot of data from websites, without us having to do it manually
 we can extract the date, parse it and use it
 we can use web scraping if there is no other way to do it like an API, and we need the data to analyze or ti store
 
@@ -12,7 +12,7 @@ use the request module to send a GET request, use the HTMl data we get back and 
 
 we have to call Beautiful Soup after we import it
 
-BeautifulSoup(html_string, "html_parser")-parse html
+BeautifulSoup(html_string, "html.parser")-parse html
 
 important to remember that HTML always comes back as a string
 after that we can navigate through it using either -tag names:h1, h2, p, a

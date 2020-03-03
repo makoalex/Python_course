@@ -22,6 +22,7 @@ html = """
 </html>
 """
 
+"""first we have to initialize beautiful soup by writing the following and parse the HTML """
 soup_dejour = BeautifulSoup(html, "html.parser")
 # print(soup_dejour)
 # print(type(soup_dejour))
@@ -35,7 +36,7 @@ c = soup_dejour.find(id='first')
 c1= soup_dejour.select("#first")
 print(c1[0])
 
-""" we can print based of a class as well onnly we have to use the underscore after class so as not to be confused
+""" we can print based of a class as well only we have to use the underscore after class so as not to be confused
 with a Python class."""
 b = soup_dejour.find_all(class_='special')
 b1 = soup_dejour.select(".special")
