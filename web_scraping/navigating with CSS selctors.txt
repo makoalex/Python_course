@@ -10,7 +10,7 @@ EXAMPLE:
         using find: soup(name of the variable).find(id="#name of the id")- doesnt't return a list
         using CSS and select: soup.select("#name of the id")[0]- this return a list with one object
    finding an element with a class:
-        using find/ find_all:  sound.find/find_all( class_= "name of the class")
+        using find/ find_all:  soup.find/find_all( class_= "name of the class")
         using the CSS select : soup.select(".name of the class")
    finding elements with data attribute:
         using the find method: soup.find/find_all(attrs={"name of the attribute": 'value' }

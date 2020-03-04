@@ -23,7 +23,7 @@ html = """
 """
 parse = BeautifulSoup(html, "html.parser")
 """in order to select an elem of we can do the following:"""
-data = parse.body.contents[1] # that selects the entire body then add [1] to get the 1st elem
+data = parse.body.contents[1]  # that selects the entire body then add [1] to get the 1st elem
 """in order to select the contents of the body we jjust add the .CONTENTS  at the end"""
 print(data)
 """we need to pay attention to the new line when printing a certain element - see file text"""
@@ -32,5 +32,10 @@ data1 = parse.body.contents[1].contents
 print(data1)
 """ we can descend into the hierachy and navigate through the elements, from DIV  to OL, by calling NEXT_SIBLING
 as they have the same level on the hierarchy, not embedded into one another"""
-new_data = parse.body.contents[1].next_sibling.next_sibling #called it twice because there was a new line 
+new_data = parse.body.contents[1].next_sibling.next_sibling  # called it twice because there was a new line
 print(new_data)
+""" we can select an element and find its parent as well and then keep moving up as shown next:"""
+data2 = parse.select(".special")[0].parent.parent
+print(data2)
+"""parse.find(class_ = "special).parent"""
+
