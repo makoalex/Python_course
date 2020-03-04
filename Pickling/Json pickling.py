@@ -1,6 +1,6 @@
 # Json provides functions to encode and decode Python to Json
 import json
-from dictionary  import inventory
+from dictionary import inventory
 j = json.dumps(inventory )
 k = json.dumps(['bar', None, 1.21,(' mickey', ' minnie') ])
 print(k)

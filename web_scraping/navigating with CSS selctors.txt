@@ -22,3 +22,16 @@ we can use the GET_TEXT method which will return the text within an element
                 ATTRS will return a dictionary of attributes
                 we can also accesc atribbutes by using brackets
 
+
+NAVIGATING WITH BEAUTIFUL SOUP
+means having a tag and finding elements relative to that tag
+if we have an LI we can ask BS to find the parent of that LI, the next sibling, descendant
+
+the fiat way to to t is via tags using attributes via the tags :    PARENT/PARENTS, NEXT_SIBLING/ NEXT_SIBLINGS
+PREVIOUS_SIBLING/PREVIOUS SIBLINGS
+the second one is via searching : FIND_PARENT/ FIND_PARENTS, FIND_SIBLING/ FIND_SIBLINGS
+
+in the example file, NAVIGATING WITH BEAUSOUP, we we print the contents of the body, what we get is a list, so we have
+all of the tags, each is an object, and we have all the new lines, and they are all over html.
+each one occurs when there is a break between elements, and if i wants the first elem we need to use number 1 not 0 because 0 is the new line
+
