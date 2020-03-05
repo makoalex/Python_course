@@ -20,7 +20,7 @@ ACCESSING DATA WITH BEAUTIFUL SOUP:
 we can use the GET_TEXT method which will return the text within an element
                .NAME will return the tag name of a given element
                 ATTRS will return a dictionary of attributes
-                we can also accesc atribbutes by using brackets
+                we can also access attributes by using brackets
 
 
 NAVIGATING WITH BEAUTIFUL SOUP
