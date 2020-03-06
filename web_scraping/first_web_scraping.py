@@ -1,4 +1,4 @@
-# https://www.rithmschool.com/blog
+
 import requests
 import pprint
 from bs4 import BeautifulSoup
