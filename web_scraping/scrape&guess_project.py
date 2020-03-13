@@ -4,14 +4,11 @@ from random import choice
 from pprint import pprint
 
 all_quotes = []
-quiz = []
-answer = []
-guesses = 4
+
 basic_url = "http://quotes.toscrape.com/"
 next_url = "/page/1"
 while next_url:
     url = requests.get("{}{}".format(basic_url, next_url))
-    # print("now scrapping {}{}".format(basic_url, next_url))
     data = BeautifulSoup(url.text, "html.parser")
     quotes = data.select(".quote")
 
@@ -19,22 +16,32 @@ while next_url:
         all_quotes.append({"quote": q.find('span').get_text(),
                            "author": q.select(".author")[0].get_text(),
                            "bio_link": q.find('a')['href']
-
                            })
-
     next_button = data.find(class_="next")
     next_url = next_button.find_next("a")["href"] if next_button else None
+quiz = []
+answer = ' '
+guesses = 4
+quiz.append(choice(all_quotes))
+pprint(quiz)
+question = [el['quote'] for el in quiz][0]
+print([i['author'] for i in quiz][0])
+print(('who said {}  ?'.format(question)))
+while answer.lower().strip() != quiz[0]['author'].lower().strip() and guesses > 0:
+    answer = input("Wanna have a go? You have {} remaining guesses`\n".format(guesses))
+    guesses -= 1
+    if guesses == 3:
+        result = requests.get("{}{}".format(basic_url, quiz[0]['bio_link']))
+        bio = BeautifulSoup(result.text, 'html.parser')
+        hint = bio.select(".author-born-date")[0].get_text()
+        hint_2 = bio.select(".author-born-location")[0].get_text()
+        print("Here is your first hint: The author was born {} on the {}".format(hint_2, hint))
+    elif guesses == 2:
+        print('Here is another hint: the first letter of his name is {}'.format(quiz[0]['author'][0]))
+    elif guesses ==1:
+        second_initial = quiz[0]['author'].split()[1][0]
+        print('Here is the second letter of his name {}. Good luck!'.format(second_initial))
+    else:
+        print("Oops , seems you have ran out of guesses! the name you're looking for is: {}".format(quiz[0]['author']))
 
-    quiz.append(choice(all_quotes))
-    pprint(quiz)
-    question = [el['quote'] for el in quiz][0]
-    print(input('who said {} ?'.format(question)))
-    if answer == [a['author'] for a in quiz][0]:
-        print('Congratulations ! Your answer is correct')
-    elif not answer:
-        guesses -= 1
-        if guesses == 3:
-            print('YOU HAVE 3 GUESSES LEFT !')
-            hint = data.find_all(class_='text')[0].find_next_sibling()
-            print(hint)
-            print(len(hint))
+print('Thanks for playing!')
