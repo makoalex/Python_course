@@ -3,11 +3,13 @@ from bs4 import BeautifulSoup
 from random import choice
 from pprint import pprint
 
-
 basic_url = "http://quotes.toscrape.com/"
+
+
 def get_quotes():
+    next_url = "/page/1"
     while next_url:
-        next_url = "/page/1"
+
         all_quotes = []
         url = requests.get("{}{}".format(basic_url, next_url))
         data = BeautifulSoup(url.text, "html.parser")
@@ -20,13 +22,15 @@ def get_quotes():
                                })
         next_button = data.find(class_="next")
         next_url = next_button.find_next("a")["href"] if next_button else None
-def start_game():
+        return all_quotes
 
+
+def start_game(Quotes):
     quiz = []
     answer = ' '
     guesses = 4
-    quiz.append(choice(all_quotes))
-    pprint(quiz)
+    quiz.append(choice(Quotes))
+    """we have to create a variable where we can store the get function"""
     question = [el['quote'] for el in quiz][0]
     print([i['author'] for i in quiz][0])
     print(('who said {}  ?'.format(question)))
@@ -48,12 +52,15 @@ def start_game():
             second_initial = quiz[0]['author'].split()[1][0]
             print('Here is the second letter of his name {}. Good luck!'.format(second_initial))
         else:
-            print("Oops , seems you have ran out of guesses! the name you're looking for is: {}".format(quiz[0]['author']))
+            print("Oops , seems you have ran out of guesses! the name you're looking for is: {}".format(
+                quiz[0]['author']))
 
     again = ('yes', 'y', 'no', 'n')
     while answer not in again:
-        answer = input("Thanks for playing! Would you like to play again y/n?")
+        answer = input("Thanks for playing! Would you like to play again y/n?\n")
     if answer.lower() in ('yes', 'y'):
-        return start_game()
+        return start_game(Quotes)
     else:
         print('Thanks for playing! Bubye')
+Quotes = get_quotes()
+start_game(Quotes)
