@@ -1,27 +1,17 @@
-import requests
-from bs4 import BeautifulSoup
+# we are importing the scarping part from csv
+from csv import DictReader
 from random import choice
-from pprint import pprint
+from bs4 import BeautifulSoup
+import requests
 
 basic_url = "http://quotes.toscrape.com/"
 
 
-def get_quotes():
-    next_url = "/page/1"
-    while next_url:
-        all_quotes = []
-        url = requests.get("{}{}".format(basic_url, next_url))
-        data = BeautifulSoup(url.text, "html.parser")
-        quotes = data.select(".quote")
-
-        for q in quotes:
-            all_quotes.append({"quote": q.find('span').get_text(),
-                               "author": q.select(".author")[0].get_text(),
-                               "bio_link": q.find('a')['href']
-                               })
-        next_button = data.find(class_="next")
-        next_url = next_button.find_next("a")["href"] if next_button else None
-        return all_quotes
+def game(filename):
+    with open(filename, 'r') as file:
+        csv_reader = DictReader(file)
+        for row in csv_reader:
+            return list(csv_reader)
 
 
 def start_game(Quotes):
@@ -61,5 +51,8 @@ def start_game(Quotes):
         return start_game(Quotes)
     else:
         print('Thanks for playing! Bubye')
-Quotes = get_quotes()
+
+
+Quotes = game('Scrape&guess.csv')
 start_game(Quotes)
+"""there is no more scraping happening anymore, we are using the data saved in the file"""
