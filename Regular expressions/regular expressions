@@ -1,0 +1,35 @@
+It's a concept that is separate from python but there is an implementation where we can write and use REGEX inn our code
+Because it's not something python specific we have to work with the Rgex library
+A REGULAR EXPRESSION  is a sequence of characters that defines a search pattern
+It's a powerful language for matching text patterns
+In Python we can take the patterns that we define and test it, so it can take 2 or 3 lines to validate an email
+instead of looping through or using if statements
+
+
+Basic REGEX EXPRESSIONS
+using PYTHEX
+if you want to escape the meaning of a character we have to use backslash in front of the character that has special meaning
+NB!! - it is case sensitive, so it will match only uppercase or lowercase
+\d -- any digit
+\w -- any letter, digit, or underscore
+\s -- any whitespace or tab,  takes also the new line at the end of a row
+\D -- everything that is a not a digit
+\W --  mot a word character
+\. -- any character except the line break
+QUANTIFIERS
+help to manipulate what we are looking for.
+{2} with a number inside can help manipulate the amount of characters you want to select
+ex: 929 2403-333      \d{3} \d{4}-\d{3} -- selection of numbers from a file
+987 4721-211
++ means one or more after the selection
+{1,2} means we can have a range of times something can occur
+so for example, in order to have all the characters that are between 5 and 6 characters long we would have to write this
+\s\w{5,6}\s using the range curly braces
+{3,} using a number and a comma, means 3 or more in a row
+* means zero or more times in a row
+? means zero or once underlines something that is optional
+987 4721-211
+980 4567334
+in the ex above, if we want to select the 1st we would write :\d{3} \d{4}-\d{3}
+fir the second we would have to add the '?' because  the dash would be considered optional \d{3} \d{4}-?\d{3}
+
