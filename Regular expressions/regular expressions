@@ -42,3 +42,16 @@ V. we have the '|' which means OR. Ex: 415 216-3198  In order to select both num
                                       (415) 216-3198  parenthesis: (\(\d{3}\)|\d{3}) this will select only the first 3
                                                       digits with OR without parenthesis(all needs to be within a new
                                                       parenthesis so as to separate it from the rest of the code
+VI. we can separate all the components with parenthesis like in this ex:
+    Mr. Ola løvholm          - (Mr\.|Mrs\.|Ms\.) ([A-Za-z]+ [A-Za-zøØæÆå]+)-the first parant separates the mr., mrs., ms
+    Ms. Alexandra Macovei      while the second one takes the first and last names
+    Mrs. Ada Sværå           - It's a way of signifying that this content is a group
+
+    In Python the results by doing this will come in two parts . If we want to separate them into 3 components instead
+    of 2 we could just add a new parenthesis around the groups;
+    https://pythex.org     solution (https://+)([a-zA-z]+)([\.a-zA-z]+)  1. https://   1. https://
+    https://google.com.com                                               2. pythex     2. google
+                                                                         3. .org       3. .com.com
+
+
+
