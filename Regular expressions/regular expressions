@@ -33,3 +33,12 @@ so for example, in order to have all the characters that are between 5 and 6 cha
 in the ex above, if we want to select the 1st we would write :\d{3} \d{4}-\d{3}
 fir the second we would have to add the '?' because  the dash would be considered optional \d{3} \d{4}-?\d{3}
 
+I. in order to select groups of characters or ranges we can use a [] and insert the group we are looking for
+II.  if we want to match double or triple values wecan add a[]{2} and it will look for  double values
+III. we have word delimiters like \b that select only the words in a given syntax like : \b\w\b
+IV. and we have the carrot ^ which outside square brackets states the beginning of a statement, and the $ wich states
+    the end .
+V. we have the '|' which means OR. Ex: 415 216-3198  In order to select both numbers we have to navigate around the
+                                      (415) 216-3198  parenthesis: (\(\d{3}\)|\d{3}) this will select only the first 3
+                                                      digits with OR without parenthesis(all needs to be within a new
+                                                      parenthesis so as to separate it from the rest of the code
