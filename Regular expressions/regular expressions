@@ -49,8 +49,8 @@ VI. we can separate all the components with parenthesis like in this ex:
 
     In Python the results by doing this will come in two parts . If we want to separate them into 3 components instead
     of 2 we could just add a new parenthesis around the groups;
-    https://pythex.org     solution (https://+)([a-zA-z]+)([\.a-zA-z]+)  1. https://   1. https://
-    https://google.com.com                                               2. pythex     2. google
+    https://pythex.org     solution (https?://+)([a-zA-z]+)([\.a-zA-z]+)  1. https://   1. https://
+    http://google.com.com                                               2. pythex     2. google
                                                                          3. .org       3. .com.com
 
 

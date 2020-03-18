@@ -1,0 +1,22 @@
+ we will see how to write Python code that will match a string using REGULAR EXPRESSIONS
+ define a function that returns true if it matches a pattern of false if it doesn't
+ extract al matches from a given string and returns it in a list
+
+We start by importing Re module in python which provides regular expressions matching operations
+NB. MOST regular expressions operations are available as methods or module level functions on COMPILED REGULAR EXPRESSIONS
+A REGULAR EXPRESSION RE specifies a set of strings that matches it.
+the functions in this module let you check if a particular string matches a regular expression
+
+in the re module, after compilein our regex expression we can do a search in our stings to get a match
+we can use SEARCH which will return one result
+we can use FINDALL which will return all non-overlapping matches
+
+as a side note, we don't always have to compile before we search
+there is a distinction between 1.re.search(pattern, string, flags=0)
+                               2. Pattern.search(string[, pos[, endpos]])
+with the first example --re.search(r'\d{3} \d{4}-\d{3}', ' call me at this number 987 4721-211')-- we have to recompile
+                       every time we do the search
+with the second example --re.compile(r'\d{3} \d{4}-\d{3}')
+                        --  pattern.search(' call me at this number 987 4721-211')
+                        --print(res.group())
+            we only have to compile it once  as a  regular expression object and it can be reused
