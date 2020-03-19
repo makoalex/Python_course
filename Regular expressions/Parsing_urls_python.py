@@ -17,5 +17,5 @@ print(result.group(2))
 print(result.group(3))
 """ wecan pretty print it as well with an f string"""
 print('PROTOCOL: {}'.format(result.group(1)))
-print('DOMAIN: {}'.format(result.group(2)))
+print('DOMAIN: {}'.format(result.group(2)));
 print('THE REST : {}'.format(result.group(3)))

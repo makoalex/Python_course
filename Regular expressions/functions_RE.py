@@ -19,7 +19,7 @@ def extract_all_phone(input):
 
 print(extract_phone('new number is 451 3117-231'))
 print(extract_phone(' 451 3117-231nkn'))
-print(extract_all_phone('hi snew number is  451 3117-231 and 465 8973-323'))
+print(extract_all_phone('his new number is  451 3117-231 and 465 8973-323'))
 
 
 # checking now if  the phone number we extracted is a valid number
