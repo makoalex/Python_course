@@ -1,0 +1,8 @@
+we first have to create a table;
+technically the name doesn't have to be capitalised, but that is the convention, then the name eof the table
+in parenthesis after the name we have to create a comma separated list
+in the terminal we type the command .tables and we will get the name of he table as described above.
+If we hit . exit and exit the process, we will notice that when we come back and type .tables, we will not have the previous
+tables
+we have to use .open FILENAME, create a file with the db extension and then create the files within that database.
+
