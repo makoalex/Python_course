@@ -34,6 +34,6 @@ V. we can chain negations together:
 VI. we can select using >  or < signs: SELECT*  FROM car WHERE year > 1967;
 VII. we can select based on characters like letters or signs:
                      Select select* from car where model like "%cc%";
-                     the % represents 2 characters, 2 cc together anywhere
+                     the % represents 2 characters, 2 cc together anywhere- they stand in for 'other stuff'
 
 
