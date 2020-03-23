@@ -3,3 +3,6 @@ CREATE TABLE cats (
         breed TEXT,
         age INTEGER
 );
+insert into dog (name, breed, age) values ("Moose","Husky", 4)
+insert into dog (name, breed, age) values ("Lola","Goldenpoo", 7)
+insert into dog (name, breed, age) values ("Piggy","shitzu", 9)

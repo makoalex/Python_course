@@ -5,4 +5,35 @@ in the terminal we type the command .tables and we will get the name of he table
 If we hit . exit and exit the process, we will notice that when we come back and type .tables, we will not have the previous
 tables
 we have to use .open FILENAME, create a file with the db extension and then create the files within that database.
+when we want to reopen the file : sqlite3 /.filename.db
+                                  .tables
+Nota Bene!
+SQL statements ut be terminated with a ";", a delimiter
+the non- Sql commands which start with "." don' need to be terminated like that but are considered complete as soon as
+enter is pressed
+if a command that does nt start with a "." is written and enter is pressed, without the SQL termination character, the
+CLI client displays the continuation prompt (-->) and expects the SQL command to be continued on the fallowing line,
+until it's properly terminated.
+
+BASIC INSERTING SQL:
+to add values : INSERT INTO filename ( here specify what you are inserting) values( here enter the values of what you just specified)
+                                             insert into dog (name, breed, age) values ("Bobbo", "Labrador", 6);
+to see what we added in the table : select* from filename
+BASIC SELECTING WITH SQL
+the select * = show all
+I. if we want to see a specific example, we can say select name (instead of *) or the name of the attribute we are looking for
+II. if we want all the info just on 1 particular aspect : select* from filename where column name is ... fill column name+ ;
+                    select* from car where make is "Ford";
+                    select* from car where year is 2010;- we get all the cars that have the same year
+III. we can also narrow it down to get one specific  information :
+                    SELECT make FROM car WHERE year IS 1967; - and we get only the make of the car
+IV. we can also have a negation : SELECT* FROM car WHERE make IS NOT "Ford";
+V. we can chain negations together:
+                     SELECT*  FROM car WHERE make IS NOT 'Ford' AND make IS NOT 'Honda'
+                     SELECT year  FROM car WHERE make IS NOT 'Ford' AND make IS NOT 'Honda'
+VI. we can select using >  or < signs: SELECT*  FROM car WHERE year > 1967;
+VII. we can select based on characters like letters or signs:
+                     Select select* from car where model like "%cc%";
+                     the % represents 2 characters, 2 cc together anywhere
+
 
