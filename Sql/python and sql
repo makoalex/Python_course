@@ -17,3 +17,6 @@ IV. when we create a new insert we can either got the SQl way:
             then commit: connection.commit()
 V. we don't want to insert random data , variables into the code manually
     when we have data coming in from forms or applications we have to process it,
+VI. the way we add things to a data base is with the use of "?" for every value that needs to be added in
+    - we then execute that, but also add a tuple containing all the values that we want added in.
+    - the tuple is necessary, otherwise the code will iterate over each character of the strings or values we pass in
