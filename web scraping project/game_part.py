@@ -8,7 +8,7 @@ basic_url = "http://quotes.toscrape.com/"
 
 
 def game(filename):
-    with open(filename, 'r') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         csv_reader = DictReader(file)
         for row in csv_reader:
             return list(csv_reader)
@@ -53,6 +53,6 @@ def start_game(Quotes):
         print('Thanks for playing! Bubye')
 
 
-Quotes = game('Scrape&guess.csv')
+Quotes = game('Scrape&guess_Project.csv')
 start_game(Quotes)
 """there is no more scraping happening anymore, we are using the data saved in the file"""

@@ -1,0 +1,17 @@
+Python has a built in Sqlite library that comes with it
+SQlite  is a c library that provides lightweight disk- based database that doesn't require a separate server process
+I. to use the module, we firs have to make a connection object that represents the database here the data will be stored in the
+example.db database
+II. once we have the connection we have to create a cursor object, which is like a work area for sql commands
+    -it allocates this little bit of memory for us to work an it will return some data.
+    -basically we crate a cursor and execute different lines of SQL with it
+III.  we use the cursor to execute some code with it and then we commit the changes
+           connection = sqlite3.connect('name of the databse.db')
+           c= connection.cursor()
+           we use that cursor for example to create a table: c.execute(CREATE TABLE name of table...);
+           the we commit the changes : connection.commit()
+           and close the connection: connection.close()
+IV. when we create a new insert we can either got the SQl way:
+               insert_query= "INSERT INTO name of table(NAME1 text etc.) VALUES( fill the values)"
+            then we execute the changes: c.execute(insert_query)
+            then commit: connection.commit()
