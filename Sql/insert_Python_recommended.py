@@ -8,6 +8,6 @@ data = ('Cadbury', 'Uk, Australia, New Zealand', 'Cadbury')
 # the way to add to the database is to add "?" for every value that we want added in
 # and execute the variable with a tuple containing the values we want to be added in:
 query = " INSERT INTO chocolates VALUES (?,?,?);"
-c.execute(query, (data))
+c.execute(query, data)
 connection.commit()
 connection.close()
