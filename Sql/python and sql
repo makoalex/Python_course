@@ -15,3 +15,5 @@ IV. when we create a new insert we can either got the SQl way:
                insert_query= "INSERT INTO name of table(NAME1 text etc.) VALUES( fill the values)"
             then we execute the changes: c.execute(insert_query)
             then commit: connection.commit()
+V. we don't want to insert random data , variables into the code manually
+    when we have data coming in from forms or applications we have to process it,
